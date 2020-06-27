@@ -23,9 +23,15 @@ func WalkReader(ctx context.Context, opts *WalkOptions, fh io.Reader) {
 		reader = bufio.NewReader(cr)
 	}
 
-	path := "fixme"
+	path := ""	
 	lineno := 0
 
+	v := ctx.Value(CONTEXT_PATH)
+
+	if v != nil {
+		path = v.(string)
+	}
+	
 	for {
 
 		select {

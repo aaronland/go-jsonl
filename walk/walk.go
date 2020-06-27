@@ -8,6 +8,8 @@ import (
 const QUERYSET_MODE_ANY string = "ANY"
 const QUERYSET_MODE_ALL string = "ALL"
 
+const CONTEXT_PATH string = "github.com/aaronland/go-jsonl#path"
+
 type WalkOptions struct {
 	URI           string
 	Workers       int
