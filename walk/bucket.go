@@ -123,7 +123,7 @@ func WalkBucket(ctx context.Context, opts *WalkOptions, bucket *blob.Bucket) err
 				}
 
 				ctx := context.WithValue(ctx, CONTEXT_PATH, path)
-				
+
 				WalkReader(ctx, opts, fh)
 
 			}(path)
