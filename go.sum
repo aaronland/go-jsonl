@@ -165,6 +165,8 @@ github.com/aaronland/go-json-query v0.1.0 h1:ZHtbpW8jiGYuOXKDEscWDrDjyVXZhU9Qqfi
 github.com/aaronland/go-json-query v0.1.0/go.mod h1:Mj1i+9hS3cd2Nj7qlnahcUeRC5uydPuJ/3xZGlIgBFU=
 github.com/aaronland/go-json-query v0.1.1 h1:2kwlEvJrH8Vr9gOMtfiVhBAqDtq3z7S0P2zj173mUhs=
 github.com/aaronland/go-json-query v0.1.1/go.mod h1:lZHt3LmcrZ0bovlqvr1jQaQKJKpb2pMLN2er6RGHAIQ=
+github.com/aaronland/go-json-query v0.1.2 h1:+yJBCJk9kcRAzbErhh+zOqK3DHSs/GmuSqXcCn5yH/c=
+github.com/aaronland/go-json-query v0.1.2/go.mod h1:kkCl5KrO+fVSL2M8b/i3qO5PsnCpmajGXkbJHpEQPY8=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/aws/aws-sdk-go v1.15.27/go.mod h1:mFuSZ37Z9YOHbQEwBWztmVzqXrEkub65tZoCYDt7FT0=
 github.com/aws/aws-sdk-go v1.19.18/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=
@@ -408,6 +410,8 @@ github.com/tidwall/gjson v1.7.5 h1:zmAN/xmX7OtpAkv4Ovfso60r/BiCi5IErCDYGNJu+uc=
 github.com/tidwall/gjson v1.7.5/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
 github.com/tidwall/gjson v1.9.3 h1:hqzS9wAHMO+KVBBkLxYdkEeeFHuqr95GfClRLKlgK0E=
 github.com/tidwall/gjson v1.9.3/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
+github.com/tidwall/gjson v1.12.1 h1:ikuZsLdhr8Ws0IdROXUS1Gi4v9Z4pGqpX/CvJkxvfpo=
+github.com/tidwall/gjson v1.12.1/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
 github.com/tidwall/match v1.0.1 h1:PnKP62LPNxHKTwvHHZZzdOAOCtsJTjo6dZLCwpKm5xc=
 github.com/tidwall/match v1.0.1/go.mod h1:LujAq0jyVjBy028G1WhWfIzbpQfMO8bBZ6Tyb0+pL9E=
 github.com/tidwall/match v1.0.3 h1:FQUVvBImDutD8wJLN6c5eMzWtjgONK9MwIBCOrUJKeE=
