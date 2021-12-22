@@ -58,6 +58,8 @@ func WalkReader(ctx context.Context, opts *WalkOptions, fh io.Reader) {
 
 			if err == io.EOF {
 				break
+			} else if err == io.ErrUnexpectedEOF {
+				break
 			} else {
 				continue
 			}
