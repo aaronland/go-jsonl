@@ -16,7 +16,7 @@ import (
 func main() {
 
 	bucket_uri := flag.String("bucket-uri", "file:///", "A valid GoCloud blob URI.")
-	
+
 	flag.Parse()
 
 	uris := flag.Args()
@@ -35,7 +35,7 @@ func main() {
 	}
 
 	mw := io.MultiWriter(writers...)
-	
+
 	for _, uri := range uris {
 
 		uri = strings.TrimLeft(uri, "/")
