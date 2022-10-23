@@ -101,12 +101,12 @@ func WalkBucket(ctx context.Context, opts *WalkOptions, bucket *blob.Bucket) err
 
 			path := strings.TrimRight(obj.Key, "/")
 
+			wg.Add(1)
+			
 			go func(path string) {
 
 				// log.Println("WAIT", path)
 				<-throttle
-
-				wg.Add(1)
 
 				defer func() {
 					// log.Println("CLOSE", path)
