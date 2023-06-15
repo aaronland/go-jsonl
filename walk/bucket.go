@@ -2,11 +2,12 @@ package walk
 
 import (
 	"context"
-	"gocloud.dev/blob"
 	"io"
 	_ "log"
 	"strings"
 	"sync"
+
+	"gocloud.dev/blob"
 )
 
 func WalkBucket(ctx context.Context, opts *WalkOptions, bucket *blob.Bucket) error {

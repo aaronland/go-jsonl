@@ -4,13 +4,14 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/aaronland/go-jsonl/walk"
-	"gocloud.dev/blob"
-	_ "gocloud.dev/blob/fileblob"
 	"io"
 	"log"
 	"os"
 	"strings"
+
+	"github.com/aaronland/go-jsonl/walk"
+	"gocloud.dev/blob"
+	_ "gocloud.dev/blob/fileblob"
 )
 
 func main() {
