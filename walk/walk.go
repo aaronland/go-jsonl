@@ -27,6 +27,15 @@ type WalkOptions struct {
 	Filter               WalkFilterFunc
 }
 
+type IterateOptions struct {
+	// URI                  string
+	ValidateJSON bool
+	FormatJSON   bool
+	QuerySet     *query.QuerySet
+	IsBzip       bool
+	Filter       WalkFilterFunc
+}
+
 type WalkRecord struct {
 	Path             string
 	LineNumber       int
