@@ -13,22 +13,7 @@ const CONTEXT_PATH string = "github.com/aaronland/go-jsonl#path"
 
 type WalkFilterFunc func(context.Context, string) bool
 
-type WalkOptions struct {
-	URI                  string
-	Workers              int
-	RecordChannel        chan *WalkRecord
-	ErrorChannel         chan *WalkError
-	DoneChannel          chan bool
-	SendCompletedChannel bool
-	ValidateJSON         bool
-	FormatJSON           bool
-	QuerySet             *query.QuerySet
-	IsBzip               bool
-	Filter               WalkFilterFunc
-}
-
 type IterateOptions struct {
-	// URI                  string
 	ValidateJSON bool
 	FormatJSON   bool
 	QuerySet     *query.QuerySet
