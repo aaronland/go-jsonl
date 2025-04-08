@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"flag"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -41,73 +40,28 @@ func main() {
 
 		uri = strings.TrimLeft(uri, "/")
 
-		fh, err := bucket.NewReader(ctx, uri, nil)
+		r, err := bucket.NewReader(ctx, uri, nil)
 
 		if err != nil {
 			log.Fatalf("Failed to open %s, %v", uri, err)
 		}
 
-		defer fh.Close()
+		defer r.Close()
 
-		err = walkReader(ctx, fh, mw)
+		iter_opts := &walk.IterateOptions{}
 
-		if err != nil {
-			log.Fatalf("Failed to walk %s, %v", uri, err)
-		}
-	}
+		for rec, err := range walk.IterateReader(ctx, iter_opts, r) {
 
-}
+			if err != nil {
+				log.Fatalf("Failed to walk %s, %v", uri, err)
+			}
 
-func walkReader(ctx context.Context, r io.Reader, wr io.Writer) error {
+			_, err := mw.Write(rec.Body)
 
-	ctx, cancel := context.WithCancel(ctx)
-	defer cancel()
-
-	var walk_err error
-
-	record_ch := make(chan *walk.WalkRecord)
-	error_ch := make(chan *walk.WalkError)
-	done_ch := make(chan bool)
-
-	go func() {
-
-		for {
-			select {
-			case <-ctx.Done():
-				done_ch <- true
-				return
-			case err := <-error_ch:
-				walk_err = err
-				done_ch <- true
-			case r := <-record_ch:
-
-				_, err := wr.Write(r.Body)
-
-				if err != nil {
-					error_ch <- &walk.WalkError{
-						Path:       r.Path,
-						LineNumber: r.LineNumber,
-						Err:        fmt.Errorf("Failed to index feature, %w", err),
-					}
-				}
+			if err != nil {
+				log.Fatalf("Failed to write body at line %d, %v", rec.LineNumber, err)
 			}
 		}
-	}()
-
-	walk_opts := &walk.WalkOptions{
-		RecordChannel: record_ch,
-		ErrorChannel:  error_ch,
-		Workers:       10,
-		FormatJSON:    true,
 	}
 
-	walk.WalkReader(ctx, walk_opts, r)
-
-	<-done_ch
-
-	if walk_err != nil && !walk.IsEOFError(walk_err) {
-		return fmt.Errorf("Failed to walk document, %v", walk_err)
-	}
-
-	return nil
 }
