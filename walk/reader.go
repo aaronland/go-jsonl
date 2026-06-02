@@ -69,7 +69,7 @@ func IterateReader(ctx context.Context, opts *IterateOptions, r io.Reader) iter.
 
 			if opts.ValidateJSON {
 
-				var stub interface{}
+				var stub any
 				err = json.Unmarshal(body, &stub)
 
 				if err != nil {

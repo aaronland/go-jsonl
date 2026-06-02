@@ -8,9 +8,10 @@ import (
 	"os"
 	"strings"
 
+	_ "gocloud.dev/blob/fileblob"
+	
 	"github.com/aaronland/go-jsonl/walk"
 	"gocloud.dev/blob"
-	_ "gocloud.dev/blob/fileblob"
 )
 
 func main() {
