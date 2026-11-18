@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"compress/bzip2"
 	"context"
-	"encoding/json"
+	"encoding/json/v2"
 	"io"
 	"iter"
 
